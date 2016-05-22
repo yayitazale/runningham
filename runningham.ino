@@ -37,8 +37,8 @@ ThingSpeak configuration
 ********************/
 
 
-unsigned long myChannelNumber = 118200;                         // Your thingspeak channel number
-const char * myWriteAPIKey = "CPCMSS99N7EXQH4V";                // Your thingspeak channel write api key
+unsigned long myChannelNumber = **yourchanelnumber**;                         // Your thingspeak channel number
+const char * myWriteAPIKey = **"yourapikey"**;                // Your thingspeak channel write api key
 
 TCPClient client;                                               // Client to stream is TCP as we use a core.
 
@@ -80,7 +80,7 @@ if (RunningState == true) {                                     // Check if Ham 
         SessionDistance = Counter*WheelLength;                  // Calculate session distance
         Distance += SessionDistance;                            // Calculate total distance
         
-        SessionSpeed = SessionDistance/(LastTime-FirstTime);    // Calculate session speed
+        SessionSpeed = SessionDistance/((LastTime-FirstTime)/1000);    // Calculate session speed
         
         SumSpeed += SessionSpeed;                               // Sum of all speeeds
         Speed = SumSpeed / Sessions;                            // Average Speed of all sessions
